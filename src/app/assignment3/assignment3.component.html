@@ -1,0 +1,6 @@
+<p>assignment3 works!</p>
+<button class="btn btn-primary" (click)="onToggleDisplay()"> Display Details</button>
+<p *ngIf="showSecret">Secret Password </p>
+<div *ngFor="let each of log; let i = index"
+[ngStyle]="{backgroundColor: i >=5 ? 'blue' : 'red'}"
+[ngClass]="{'white-text': i >=5}">{{each}}</div>

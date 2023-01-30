@@ -1,0 +1,26 @@
+<div class="bg-container">
+  <h1 class="heading-content">Language Translator</h1>
+  <hr>
+    <div class="language-section">
+      <select class="source-selection" (change)="getSourceLanguage($event)">
+          <option>Select Source Language</option>
+          <option *ngFor="let language of LanguageDetails" [ngValue]="language">
+              {{language}}</option>
+      </select>
+      <select class="destination-selection" (change)="getDestinationLanguage($event)">
+        <option>Select Destination Language</option>
+        <option *ngFor="let language of LanguageDetails" [ngValue]="language">
+            {{language}}</option>
+    </select>
+    </div>
+    <input type="text" class="text-to-transulate" [(ngModel)]="textToTransulate">
+    <button class="transulate-button btn btn-primary" (click)="transulateText()">Transulate</button>
+    <div *ngIf="responseText">
+      <h2 class="h2-content">Translated text is </h2>
+      <p class="response-text" [ngStyle]="{color: stausCode === 200 ? 'black' : 'red'}">
+        {{responseText}}</p>
+
+    </div>
+</div>
+  <p>{{sourceLanguage}}</p>
+  <p>{{destinationLanguage}}</p>

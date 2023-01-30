@@ -1,0 +1,6 @@
+<h1>assignment2 works!</h1>
+
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>Entered Username is {{userName}}</p>
+<button class="btn btn-primary" [disabled]="!userName"
+(click)="updateUserNameToEmpty()">Update UserName</button>

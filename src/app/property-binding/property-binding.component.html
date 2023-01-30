@@ -1,0 +1,13 @@
+<p>property-binding works!</p>
+<button class="btn btn-primary" disabled>Add Server</button>
+<hr>
+<button class="btn btn-primary" 
+[disabled]="!allowServer"
+(click)="onServerCreation()">Add Server After 2sec</button>
+<p [innerText]="allowServer"></p>
+<p *ngIf="isServerCreated else noServerCreated">Server Created With This Name -> {{serverCreationStatus}}</p>
+<ng-template #noServerCreated>No Server WAS CREATED</ng-template>
+<input type="text" class="form-control" (input)="onServerNameInput($event)">
+<p>{{serverName}}</p>
+<input type="text" class="form-control" [(ngModel)]="serverName" >
+<p>{{serverName}}</p>
